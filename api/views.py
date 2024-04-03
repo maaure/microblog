@@ -7,7 +7,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from .models import Publicacao, Comentario
 from .serializers import UsuarioSerializer, PublicacaoSerializer, ComentarioSerializer
 from .permissions import ReadOnlyOrIsAuthenticated, IsOwnerOrStaff
-
+from .paginators import ComentarioPagination
 
 @extend_schema(tags=["autenticação"])
 class LoginView(TokenObtainPairView):
@@ -44,8 +44,11 @@ class PublicacaoViewSet(viewsets.ModelViewSet):
     def comentarios(self, request, pk=None):
         publicacao = self.get_object()
         comentarios = Comentario.objects.filter(publicacao=publicacao)
-        serializer = ComentarioSerializer(comentarios, many=True)
-        return Response(serializer.data)
+
+        paginator = ComentarioPagination()
+        result_page = paginator.paginate_queryset(comentarios, request)
+        serializer = ComentarioSerializer(result_page, many=True)
+        return paginator.get_paginated_response(serializer.data)
 
 
 class ComentarioViewSet(viewsets.ModelViewSet):
