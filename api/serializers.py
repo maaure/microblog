@@ -28,6 +28,7 @@ class PublicacaoSerializer(serializers.ModelSerializer):
 
 class ComentarioSerializer(serializers.ModelSerializer):
     autor = UsuarioSerializer(read_only=True)
+    publicado_em = serializers.CharField(read_only=True)
 
     class Meta:
         model = Comentario
