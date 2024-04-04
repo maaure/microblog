@@ -46,9 +46,15 @@ class Publicacao(models.Model):
     def __str__(self):
         return self.titulo
 
+    class Meta:
+        ordering = ["-publicado_em"]
+
 
 class Comentario(models.Model):
     autor = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     publicacao = models.ForeignKey(Publicacao, on_delete=models.CASCADE)
     mensagem = models.CharField(max_length=400)
     publicado_em = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        ordering = ["-publicado_em"]
