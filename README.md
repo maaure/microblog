@@ -1,5 +1,5 @@
 <details open>
-  <summary><h2>2.2. Execução com Docker</h3></summary>
+  <summary><h2>2.1. Execução com Docker</h3></summary>
   
   #### Crie a imagem da aplicação:
   
