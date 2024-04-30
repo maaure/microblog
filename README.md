@@ -4,13 +4,13 @@
   #### Crie a imagem da aplicação:
   
   ```
-  docker build -t API .
+  docker build -t microblog-api .
   ```
   
   #### Execute a imagem da aplicação:
   
   ```
-  docker run -p 8000:8000 API
+  docker run -p 8000:8000 microblog-api
   ```
   </details>
 
