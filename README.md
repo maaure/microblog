@@ -1,3 +1,9 @@
+## Guia do Desenvolvedor
+
+O guia do desenvolvedor disponível abaixo pode ser resumido como um documento que concentra todas as orientações sobre como o projeto está estruturado, quais os padrões de implementação e de estilização utilizados, como é possível contribuir com o repositório, entre muitas outras informações importantes que devem ser consultadas.
+
+> [Guia do desenvolvedor](./guia-desenvolvedor.md)
+
 <details open>
   <summary><h2>1. Execução com Docker</h3></summary>
   
