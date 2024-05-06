@@ -1,5 +1,19 @@
 from rest_framework import serializers
 from .models import Usuario, Publicacao, Comentario
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+
+
+class LoginSerializer(TokenObtainPairSerializer):
+    @classmethod
+    def get_token(cls, user):
+        token = super().get_token(user)
+
+        token['username'] = user.username
+        token['nome'] = user.nome
+        token['email'] = user.email
+        token['admin'] = user.is_superuser
+
+        return token
 
 
 class UsuarioSerializer(serializers.ModelSerializer):

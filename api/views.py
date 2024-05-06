@@ -5,13 +5,14 @@ from drf_spectacular.utils import extend_schema
 from rest_framework_simplejwt.views import TokenObtainPairView
 
 from .models import Publicacao, Comentario
-from .serializers import UsuarioSerializer, PublicacaoSerializer, ComentarioSerializer
+from .serializers import UsuarioSerializer, PublicacaoSerializer, ComentarioSerializer, LoginSerializer
 from .permissions import ReadOnlyOrIsAuthenticated, IsOwnerOrStaff
 from .paginators import ComentarioPagination
 
+
 @extend_schema(tags=["autenticação"])
 class LoginView(TokenObtainPairView):
-    pass
+    serializer_class = LoginSerializer
 
 
 class SignupView(views.APIView):
