@@ -68,13 +68,21 @@ O objetivo dessas diretrizes é promover uma padronização no código, facilita
 
 ```jsx
 // ruim
-<Componente parametro1="Parametro1" parametro2="Parametro2" />;
+<Componente
+	parametro1="Parametro1"
+	parametro2="Parametro2" />;
 
 // ruim
-<Componente parametro1="Parametro1" parametro2="Parametro2" />;
+<Componente
+	parametro1="Parametro1"
+	parametro2="Parametro2"
+  	/>;
 
 // bom
-<Componente parametro1="Parametro1" parametro2="Parametro2" />;
+<Componente
+	parametro1="Parametro1"
+	parametro2="Parametro2"
+/>;
 ```
 
 ## Aspas <a name="aspas"></a>
@@ -83,10 +91,14 @@ Utilize **aspas duplas** para strings, em vez de aspas simples.
 
 ```jsx
 // ruim
-<BrButton size="small" />;
+<BrButton
+	size='small'
+/>;
 
 // bom
-<BrButton size="small" />;
+<BrButton
+	size="small"
+/>;
 ```
 
 ## Ponto e Vírgula <a name="ponto_virgula"></a>
@@ -97,7 +109,7 @@ Sempre insira um ponto e vírgula no final de cada instrução. Por exemplo:
 const { user } = useStore();
 
 useEffect(() => {
-  loadTable();
+	loadTable();
 }, []);
 ```
 
@@ -124,7 +136,7 @@ useEffect(() => {
 
 ```jsx
 // ruim
-const { user } = useStore();
+const {user} = useStore();
 
 // bom
 const { user } = useStore();
@@ -154,7 +166,7 @@ Exemplo:
 
 ```tsx
 const minhaFuncao = (parametro) => {
-  return parametro + 1;
+	return parametro + 1;
 };
 ```
 
@@ -162,46 +174,52 @@ const minhaFuncao = (parametro) => {
 
 - Sempre use `camelCase` para nome de props.
 
-  ```jsx
-  // ruim
-  <Componente
-    UserName="hello"
-    phone_number={12345678}
-  />
+```jsx
+// ruim
+<Componente
+	UserName="hello"
+	phone_number={12345678}
+/>
 
-  // bom
-  <Componente
-    userName="hello"
-    phoneNumber={12345678}
-  />
-  ```
+// bom
+<Componente
+	userName="hello"
+	phoneNumber={12345678}
+/>
+```
 
 - Quando o valor Booleano for `true`, ele pode ser omitido.
 
-  ```jsx
-  // ruim
-  <Component
-    hidden={true}
-  />
+```jsx
+// ruim
+<Component
+	hidden={true}
+/>
 
-  // bom
-  <Component
-    hidden
-  />
-  ```
+// bom
+<Component
+  	hidden
+/>
+```
 
 - Sempre que puder, evite usar `index` como `key` de props. Opte por um `ID`.
 
 ```jsx
 // ruim
-{
-  todos.map((todo, index) => <Todo {...todo} key={index} />);
-}
+{todos.map((todo, index) =>
+	<Todo
+		{...todo}
+		key={index}
+	/>
+)}
 
 // bom
-{
-  todos.map((todo) => <Todo {...todo} key={todo.id} />);
-}
+{todos.map(todo => (
+	<Todo
+		{...todo}
+		key={todo.id}
+  	/>
+))}
 ```
 
 ## Tags <a name="tags"></a>
@@ -287,12 +305,12 @@ function soma(a: number, b: number): number {
 ```tsx
 // ruim
 function soma(a, b): number {
-  return a + b;
+	return a + b;
 }
 
 // bom
 function soma(a: number, b: number): number {
-  return a + b;
+	return a + b;
 }
 ```
 
@@ -300,23 +318,23 @@ function soma(a: number, b: number): number {
 
 ```jsx
 // ruim
-function soma(a: number, b: number) {
-  return a + b;
+function soma(a: number, b: number){
+	return a + b;
 }
 
 // bom
 function soma(a: number, b: number): number {
-  return a + b;
+	return a + b;
 }
 
 // ruim
 function helloWorld() {
-  console.log("Olá, Mundo!");
+	console.log("Olá, Mundo!");
 }
 
 // bom
 function helloWorld(): void {
-  console.log("Olá, Mundo!");
+	console.log("Olá, Mundo!");
 }
 ```
 
