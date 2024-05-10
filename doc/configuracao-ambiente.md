@@ -159,7 +159,7 @@ yarn run generate
 
 #### Informe o nome do componente:
 
-> Deve-se utilizar o prefixo `Br` + o nome do componente em `PascalCase`. Para mais detalhes, leia as diretivas do guia de [padrões de implementação](./padroes-desenvolvimento.md#nomenclatura_componentes) da PNP.
+> Deve-se utilizar o prefixo `Br` + o nome do componente em `PascalCase`. Para mais detalhes, leia as diretivas do guia de [padrões de implementação](./padroes-implementacao.md#nomenclatura_componentes) da PNP.
 > 
 
 Exemplo:
@@ -169,9 +169,8 @@ Exemplo:
 ```
 
 - Os passos mencionados acima criam uma pasta dentro do diretório global `components`. Esta pasta será nomeada de acordo com o nome do componente fornecido. Dentro desta pasta, serão gerados dois arquivos: `index.tsx` e `<NomeComponente>.stories.tsx`.
-<br>
+
 - Após a implementação do componente, deve-se utilizar o Storybook para sua documentação. Faça isso utilizando o arquivo `<NomeComponente>.stories.tsx`, seguindo a [documentação do Storybook](https://storybook.js.org/docs/react/writing-stories/introduction).
-<br>
 
 **→ Story** 
 
