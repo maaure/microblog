@@ -159,7 +159,7 @@ yarn run generate
 
 #### Informe o nome do componente:
 
-> Deve-se utilizar o prefixo `Br` + o nome do componente em `PascalCase`. Para mais detalhes, leia as diretivas do guia de [padrões de implementação](./padroes-desenvolvimento.md#nomenclatura_componentes) da PNP.
+> Deve-se utilizar o prefixo `Br` + o nome do componente em `PascalCase`. Para mais detalhes, leia as diretivas do guia de [padrões de implementação](./padroes-implementacao.md#nomenclatura_componentes) da PNP.
 > 
 
 Exemplo:
