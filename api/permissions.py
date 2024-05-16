@@ -3,7 +3,9 @@ from rest_framework.permissions import BasePermission, IsAuthenticated, SAFE_MET
 
 class IsOwnerOrStaff(BasePermission):
     def has_object_permission(self, request, view, obj):
-        return obj.autor == request.user
+        is_safe_method = request.method in SAFE_METHODS
+        is_owner = obj.autor == request.user
+        return is_safe_method or is_owner
 
 
 class ReadOnlyOrIsAuthenticated(IsAuthenticated):
